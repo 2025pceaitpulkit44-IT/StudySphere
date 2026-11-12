@@ -1,0 +1,19 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    container_name: studysphere-db
+    environment:
+      POSTGRES_USER: studysphere
+      POSTGRES_PASSWORD: studysphere
+      POSTGRES_DB: studysphere
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U studysphere"]
+      interval: 5s
+      retries: 10
+
+volumes:
+  pgdata:

@@ -1,0 +1,28 @@
+# secrets - never commit these
+.env
+.env.*
+!.env.example
+
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# node
+node_modules/
+dist/
+
+# uploaded study material and local vector data (copyrighted / large)
+uploads/*
+!uploads/.gitkeep
+vector_store/*
+!vector_store/.gitkeep
+
+# OS / editor / logs
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
